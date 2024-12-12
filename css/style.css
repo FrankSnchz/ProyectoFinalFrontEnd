@@ -33,7 +33,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
     :root {
         --visible-slides-services: 3;
         --visible-slides-clients: 1;
@@ -902,10 +902,6 @@ header.scrolled {
             border-radius: 3px;
         }
     }
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 .back {
