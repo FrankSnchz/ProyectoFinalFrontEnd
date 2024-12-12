@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tablet.css" />
+    <link rel="stylesheet" href="css/movil.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/fancybox.css" />
+
+    <script
+      src="https://kit.fontawesome.com/138f20aa8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/responsiveslides.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/fancybox.js"></script>
+
+    <title>Global Dental Center</title>
+  </head>
+  <body>
+    <header id="header">
+      <div class="menu-logo">
+        <i id="menu-toggle" class="fa-solid fa-bars"></i>
+
+        <figure>
+          <img src="resources/logo.webp" alt="" />
+        </figure>
+      </div>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Timetable</a></li>
+          <li><a href="">Pages</a></li>
+          <li><a href="">Contacts</a></li>
+        </ul>
+      </nav>
+
+      <i class="zoom fa-solid fa-magnifying-glass"></i>
+    </header>
+
+    <div id="hero-slides">
+      <ul class="rslides">
+        <li>
+          <img src="resources/slide-hero-1.png" alt="" />
+          <div class="hero">
+            <h2>Welcome to Global Dental Center</h2>
+            <h1>High-Quality Dental Care</h1>
+            <a href="">MAKE AN APPOINTMENT</a>
+          </div>
+        </li>
+        <li>
+          <img src="resources/slide-hero-2.jpg" alt="" />
+          <div class="hero">
+            <h2>Individual approach to each patient</h2>
+            <h1>Personalized Service</h1>
+            <a href="">MAKE AN APPOINTMENT</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <section id="information" class="ancho">
+      <article class="emergency wow animate__animated animate__fadeInUp">
+        <h3>Emergency Help</h3>
+        <p class="phone-number">
+          <i class="fa-solid fa-phone"></i> 1-800-700-6200
+        </p>
+        <p>
+          We provide 24/7 professional dental help for all clients of our
+          clinic.
+        </p>
+      </article>
+
+      <article class="appointment wow animate__animated animate__fadeInUp">
+        <h3>Make an Appointment</h3>
+        <form
+          id="appointmentForm"
+          class="options-appo"
+          action="#"
+          method="post"
+        >
+          <select id="services" name="services" required>
+            <option value="" hidden>Select a Service</option>
+            <option value="general-dentistry">General Dentistry</option>
+            <option value="cosmetic-dentistry">Cosmetic Dentistry</option>
+          </select>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Phone"
+            required
+            pattern="^\d{10}$"
+            title="Enter a valid 10-digit phone number"
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-mail"
+            required
+          />
+          <button type="submit">MAKE AN APPOINTMENT</button>
+        </form>
+      </article>
+
+      <article class="hours wow animate__animated animate__fadeInUp">
+        <h3>Opening Hours</h3>
+        <div class="day-hours">
+          <p>Weekdays</p>
+          <p>8:00 - 20:00</p>
+        </div>
+        <div class="day-hours">
+          <p>Saturday</p>
+          <p>9:30 - 17:30</p>
+        </div>
+        <div class="day-hours">
+          <p>Sunday</p>
+          <p>9:30 - 15:00</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="about-us">
+      <div class="ancho about">
+        <div class="facts">
+          <article class="booking wow animate__animated animate__fadeInTopLeft">
+            <i class="icon fa-solid fa-book"></i>
+            <h3>Easy Booking</h3>
+            <p>Get an appointment in a few clicks</p>
+          </article>
+          <article class="team wow animate__animated animate__fadeInTopRight">
+            <i class="icon fa-solid fa-people-group"></i>
+            <h3>Qualified Team</h3>
+            <p>25+ years of experience</p>
+          </article>
+          <article
+            class="schedule wow animate__animated animate__fadeInBottomLeft"
+          >
+            <i class="icon fa-regular fa-calendar-check"></i>
+            <h3>Flexible Schedule</h3>
+            <p>Our doctors are always available</p>
+          </article>
+          <article
+            class="guarantee wow animate__animated animate__fadeInBottomRight"
+          >
+            <i class="icon fa-solid fa-shield"></i>
+            <h3>Best Price Guarantee</h3>
+            <p>No overpriced services</p>
+          </article>
+        </div>
+        <div class="our-clinic wow animate__animated animate__fadeInUp">
+          <h2>About Our Clinic</h2>
+          <p>
+            Our main long-term goal is always achieving complex results for your
+            dental health. But in the process, we also keep the focus on giving
+            you the best customer service. We're always making our dental office
+            as safe place as possible!
+          </p>
+          <div class="doctor">
+            <figure>
+              <img src="resources/doctor.jpg" alt="" />
+            </figure>
+            <div class="doctor-info">
+              <p class="name">Dr. Richard Smith</p>
+              <p class="job">Head Doctor, Orthodontist</p>
+              <div class="doctor-text">
+                <i class="icon fa-solid fa-quote-left"></i>
+                <p>
+                  Im a dedicated dental specialist with 20 years of experience
+                  trained in diagnosing and treating orthodontal and periodontal
+                  issues.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our-services">
+      <div class="carousel" data-carousel="services">
+        <div class="title-info">
+          <h1>Our Services</h1>
+          <div class="buttons-a">
+            <div class="buttons">
+              <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+              <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <a href="">ALL SERVICES</a>
+          </div>
+        </div>
+        <div class="carousel-container">
+          <div class="slide">
+            <a
+              href="resources/general_dentistry.jpg"
+              data-fancybox="project-1"
+              data-caption="General Dentistry"
+            >
+              <figure>
+                <img src="resources/general_dentistry.jpg" alt="Service 1" />
+              </figure>
+            </a>
+
+            <h2>General Dentistry</h2>
+            <p>
+              General dentists provide services related to the general
+              maintenance of oral hygiene and tooth health.
+            </p>
+          </div>
+
+          <div class="slide">
+            <a
+              href="resources/cosmetic_dentistry.jpg"
+              data-fancybox="project-2"
+              data-caption="Cosmetic Dentistry"
+            >
+              <figure>
+                <img src="resources/cosmetic_dentistry.jpg" alt="Service 1" />
+              </figure>
+            </a>
+            <h2>Cosmetic Dentistry</h2>
+            <p>
+              This type of dentistry focuses on improving your teeth appearance.
+            </p>
+          </div>
+
+          <div class="slide">
+            <a
+              href="resources/dental_implants.jpg"
+              data-fancybox="project-3"
+              data-caption="Dental Implants"
+            >
+              <figure>
+                <img src="resources/dental_implants.jpg" alt="Service 1" />
+              </figure>
+            </a>
+            <h2>Dental Implants</h2>
+            <p>Our dental implants can help you smile more confidently.</p>
+          </div>
+
+          <div class="slide">
+            <a
+              href="resources/teeth_whitening.jpg"
+              data-fancybox="project-4"
+              data-caption="Teeth Whitening"
+            >
+              <figure>
+                <img src="resources/teeth_whitening.jpg" alt="Service 4" />
+              </figure>
+            </a>
+            <h2>Teeth Whitening</h2>
+            <p>
+              Teeth whitening involves bleaching your teeth to make them
+              lighter.
+            </p>
+          </div>
+
+          <div class="slide">
+            <a
+              href="resources/dental_crowns.jpg"
+              data-fancybox="project-5"
+              data-caption="Dental Crowns"
+            >
+              <figure>
+                <img src="resources/dental_crowns.jpg" alt="Service 5" />
+              </figure>
+            </a>
+            <h2>Dental Crowns</h2>
+            <p>
+              Dental crowns are a secure way to fill gaps and help restore your
+              smile.
+            </p>
+          </div>
+
+          <div class="slide">
+            <a
+              href="resources/dentures.jpg"
+              data-fancybox="project-6"
+              data-caption="Dentures"
+            >
+              <figure>
+                <img src="resources/dentures.jpg" alt="Service 5" />
+              </figure>
+            </a>
+            <h2>Dentures</h2>
+            <p>
+              If you are struggling with chewing issues, dentures are what you
+              need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="container-parallax">
+      <div class="info-parallax">
+        <h2>CONSULTORIOS DE LA MÁS ALTA CALIDAD</h2>
+        <button>Conocer más</button>
+      </div>
+      <div class="transparencia"></div>
+    </section>
+
+    <section id="our-clients">
+      <div class="carousel" data-carousel="clients">
+        <h1>What Our Clients Say</h1>
+        <div class="carousel-container">
+          <div class="slide">
+            <figure>
+              <img src="resources/paul_jackson.jpg" alt="Slide 1" />
+            </figure>
+            <p>
+              Dr Jameson has been working on my problematic teeth for the last 6
+              months. I am so thankful to her. She is very gentle and caring.
+              Her office is ultra modern and the staff is very friendly. I drive
+              all the way from Oceanside to see her.
+            </p>
+            <h2>Paul Jackson</h2>
+          </div>
+          <div class="slide">
+            <figure>
+              <img src="resources/jane_brown.jpg" alt="Slide 2" />
+            </figure>
+            <p>
+              Global was recommended to me maybe 3 years ago and I've been
+              putting it off and wish I hadn't. For the amount of work needed,
+              it went very well. I am completely satisfied. Pain free visits and
+              I have my smile back. Thank you!
+            </p>
+            <h2>Jane Brown</h2>
+          </div>
+          <div class="slide">
+            <figure>
+              <img src="resources/vanessa_pauls.jpg" alt="Slide 3" />
+            </figure>
+            <p>
+              I have been coming here since they opened this location! And I
+              really like this dentist and the staff. I love that they have a
+              discussion with you, to explain why & how a procedure is done.
+              Thank you for the great job you do!
+            </p>
+            <h2>Vanessa Pauls</h2>
+          </div>
+          <div class="slide">
+            <figure>
+              <img src="resources/jane_anderson.jpg" alt="Slide 4" />
+            </figure>
+            <p>
+              I wanted to send enormous thanks for the caring service. It was
+              discreet, diverse and helped me in ways I wasn’t expecting. I was
+              very lucky to have been treated by you. Thank you very much!
+            </p>
+            <h2>Jane Anderson</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="our-doctors">
+      <div class="carousel" data-carousel="doctors">
+        <div class="title-info">
+          <h1>Our Doctors</h1>
+          <div class="buttons-a">
+            <div class="buttons">
+              <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+              <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <a href="">VIEW TIMETABLE</a>
+          </div>
+        </div>
+
+        <div class="carousel-container">
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-rodney-s.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Rodney Stratton</h2>
+              <p>Prosthodontist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-amy-a.jpg" alt="Slide 2" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Amy Adams</h2>
+              <p>Periodontist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-jason-c.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Jason Clark</h2>
+              <p>Pediatric Dentist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-peter-j.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Peter Jameson</h2>
+              <p>Oral Surgeon</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-michael-m.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Michael Miller</h2>
+              <p>General Dentist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-carol-cook.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Carol Cook</h2>
+              <p>Orthodontist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <figure>
+              <img src="resources/dr-julia-j.jpg" alt="Slide 1" />
+            </figure>
+            <div class="name-position">
+              <h2>Dr. Julia Jameson</h2>
+              <p>General Dentist</p>
+              <p><i class="phone fa-solid fa-phone"></i> +1 (409) 987-5874</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appo">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/z1jTl1jiZhA?si=BiGcujtPoaze1ayR"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="info">
+          <a href="">Make an Appointment</a>
+          <p>Book your next visit to us via our website</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="frequent-questions">
+      <h1>Frequently Asked Questions</h1>
+
+      <div class="question">
+        <span class="icon">+</span>
+        <p>What dental services do you offer?</p>
+      </div>
+
+      <article class="content">
+        <p>
+          Our clinic provides a wide range of dental services, including
+          preventive care, cleanings, fillings, crowns, bridges, root canals,
+          cosmetic dentistry, teeth whitening, dental implants, and
+          orthodontics.
+        </p>
+      </article>
+
+      <div class="question">
+        <span class="icon">+</span>
+        <p>Do you accept insurance?</p>
+      </div>
+
+      <article class="content">
+        <p>
+          Yes, we accept most major dental insurance plans. Please contact our
+          office to verify if your plan is accepted and to learn more about
+          coverage options.
+        </p>
+      </article>
+
+      <div class="question">
+        <span class="icon">+</span>
+        <p>Do you offer payment plans?</p>
+      </div>
+
+      <article class="content">
+        <p>
+          We understand that dental care can be a significant investment. We
+          offer flexible payment plans and financing options to make your
+          treatment more affordable. Contact our front desk for more
+          information.
+        </p>
+      </article>
+
+      <div class="question">
+        <span class="icon">+</span>
+        <p>How often should I visit the dentist?</p>
+      </div>
+
+      <article class="content">
+        <p>
+          It is recommended to visit the dentist every six months for a routine
+          cleaning and check-up. Regular visits help maintain your oral health
+          and catch any potential issues early.
+        </p>
+      </article>
+    </section>
+
+    <div class="back">
+      <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
+    </div>
+
+    <div id="modal" class="overlay">
+      <div class="dialog">
+        <h2>Contact Us</h2>
+        <p>
+          For a faster and more effective service, please fill in the following
+          form
+        </p>
+
+        <form>
+          <input placeholder="Name *" required />
+          <input placeholder="E-mail *" required />
+          <textarea placeholder="Message *" rows="4" required></textarea>
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div id="close-btn" class="close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <footer>
+      <div class="normal-footer">
+        <div class="contact">
+          <h1>CONTACT INFORMATION</h1>
+          <hr class="separador" />
+          <p><i class="icon fa-solid fa-phone"></i>1-800-700-6200</p>
+          <p><i class="icon fa-regular fa-envelope"></i>info@demolink.org</p>
+          <p>
+            <i class="icon fa-solid fa-location-dot"></i>7513 North Berkshire
+            Rd. Auburndale, FL 33823
+          </p>
+        </div>
+
+        <div class="news">
+          <h1>LATEST NEWS</h1>
+          <hr class="separador" />
+          <div class="new">
+            <h2>How to Prevent Dry Mouth</h2>
+            <p>January 12, 2018</p>
+          </div>
+
+          <div class="new">
+            <h2>Does Sugar Cause Cavities?</h2>
+            <p>January 23, 2018</p>
+          </div>
+        </div>
+
+        <div class="questions">
+          <h1>HAVE ANY QUESTIONS? CONTACT US NOW</h1>
+
+          <hr class="separador" />
+
+          <div class="area">
+            <textarea
+              id="mensaje"
+              rows="8"
+              cols="30"
+              placeholder="Your Message"
+              required
+              minlength="10"
+            ></textarea>
+
+            <div class="email-button">
+              <input id="email" type="email" placeholder="E-mail" required />
+              <button type="submit">SEND MESSAGE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="after-footer">
+        <p>Global Dental Center &copy; 2024. <a href="">Privacy Policy</a></p>
+        <div class="icons">
+          <a href=""><p>Follow Us</p></a>
+          <a href=""> <i class="fa-brands fa-facebook-f"></i> </a>
+          <a href=""> <i class="fa-brands fa-twitter"></i> </a>
+          <a href=""> <i class="fa-brands fa-google-plus-g"></i> </a>
+          <a href=""> <i class="fa-brands fa-pinterest-p"></i> </a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+
+    <!--WOW-->
+    <script>
+      new WOW().init();
+    </script>
+  </body>
+</html>

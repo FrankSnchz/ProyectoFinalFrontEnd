@@ -1,0 +1,1140 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /*Ubuntu y Lato*/
+    font-family: "Ubuntu", sans-serif;
+}
+.ancho {
+    max-width: 1200px;
+    margin: auto;
+}
+
+:root {
+    --visible-slides-services: 5;
+    --visible-slides-clients: 3;
+    --visible-slides-doctors: 4;
+
+}
+
+:root {
+    --color-buttons: #FF6F80;
+    --principal-color: #16B6D2;
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --visible-slides-services: 1;
+        --visible-slides-clients: 1;
+        --visible-slides-doctors: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --visible-slides-services: 3;
+        --visible-slides-clients: 1;
+        --visible-slides-doctors: 2;
+    }
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+
+
+    .menu-logo {
+        #menu-toggle {
+            display: none;
+        }
+
+        figure {
+            width: 100px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            gap: 30px;
+            li {
+                list-style: none;
+                
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: .8rem;
+                    font-weight: 600;
+                }
+
+            }
+        }
+    }
+}
+
+header.scrolled {
+    height: 50px;
+}
+
+#hero-slides {
+    margin-top: 50px;
+    position: relative;
+
+    .rslides {
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+        width: 100%;    
+        padding: 0;
+        margin: auto;
+        height: 500px;
+
+        img {
+            display: block;
+            height: 100%;
+            float: left;
+            width: 100%;
+            border: 0;
+            object-fit: cover;
+            position: relative;
+        }
+
+        li {
+            backface-visibility: hidden;
+            position: absolute;
+            display: none;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        li:first-child {
+            position: relative;
+            display: block;
+            float: left;
+        }
+    }
+
+    .rslides_nav.prev, .rslides_nav.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(0, 0, 0);
+        font-size: 1rem;
+        padding: 7px 15px;
+        cursor: pointer;
+        background-color: white;
+        z-index: 10;
+        text-decoration: none;
+    }
+    
+    .rslides_nav.prev:hover, .rslides_nav.next:hover {
+        font-size: 1.1rem;
+    }
+    
+    .rslides_nav.prev {
+        left: 0%;
+    }
+    
+    .rslides_nav.next {
+        right: 0%;
+    }
+
+    .hero {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        z-index: 10;
+        max-width: 800px;
+        transform: translate(-50%,-50%);
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: start;
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+        a {
+            text-decoration: none;
+            background-color: var(--color-buttons);
+            color: white;
+            padding: 15px 20px;
+            font-size: .7rem;
+            align-self: start;
+        }
+    }
+}
+
+#information {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    position: absolute;
+    gap: 50px;
+    top: 600px; /* Ajusta el valor según la distancia deseada */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    z-index: 10; /* Garantiza que esté sobre la sección superior */
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: "Lato", sans-serif;
+    }
+
+    p, #services{
+        font-size: .8rem;
+        color: gray;
+    }
+
+    article {
+        border: 1px rgb(238, 238, 238) solid;
+        padding: 30px;
+        background-color: white;
+    }
+
+    
+    .emergency {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 310px;
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            i {
+                color:var(--principal-color);
+            }
+        }
+    }
+
+    .appointment {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .options-appo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            #services {
+                width: 200px;
+                padding: 7px 7px;
+            }
+
+            input {
+                width: 200px;
+                padding: 7px 7px;
+            }
+
+            button {
+                width: 200px;
+                text-decoration: none;
+                border: none;
+                background-color:#EBEBEB;
+                color: black;
+                padding: 15px 20px;
+                font-size: .7rem;
+                text-align: center;
+            }
+
+            button:hover {
+                background-color:var(--color-buttons);
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .hours {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .day-hours {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+#about-us {
+    .about {
+        margin-top: 230px;
+        display: flex;
+        background-color: #F5F5F5;
+        padding: 80px 40px;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .facts {
+            width: 520px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+    
+            .booking, .team, .schedule, .guarantee {
+                background-color: white;
+                width: 230px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
+                clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+
+    
+                .icon {
+                    color: var(--principal-color);
+                    font-size: 35px;
+                }
+    
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    
+        .our-clinic {
+            width: 550px;
+            background-color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+
+            h2 {
+                font-size: 2.2rem;
+                font-weight: 500;
+                font-family: "Lato", sans-serif;
+
+            }
+            p {
+                font-size: .8rem;
+                color: gray;
+            }
+
+            .doctor {
+                display: flex;
+                figure {
+                    width: 400px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .doctor-info {
+                    padding: 25px;
+
+                    .name {
+                        color: black;
+                        font-size: 1.3rem;
+                    }
+
+                    .job {
+                        color: var(--principal-color);                    
+                    }
+
+                    .doctor-text {
+                        display: flex;
+                        padding-top: 25px;
+                        gap: 10px;
+
+                        .icon {
+                            color: var(--principal-color);          
+                            font-size: 3rem;          
+                        }
+                        p{
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+#our-services {
+    padding: 80px 20px;
+    
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+
+        .title-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: 500;
+                font-family: "Lato", sans-serif;
+
+            }
+            
+            .buttons-a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    padding: 15px 30px;
+                    background-color: #EBEBEB;
+                    text-decoration: none;
+                    color: black;
+                    font-size: .7rem;
+                    border: 1px #EBEBEB solid;
+                }
+
+                a:hover {
+                    background-color: var(--color-buttons);
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+            button.prev, button.next {
+                background-color: white;
+                border: 2px #EBEBEB solid;
+                color: black;
+                padding: 15px 20px;
+                cursor: pointer;
+            }
+        }
+        
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+            gap: 30px;
+
+            .slide {
+                flex: 0 0 calc(20% - 30px); /* 20% del ancho total menos 10px por el gap */
+                /*min-width: 100%;*/
+                box-sizing: border-box;
+                text-align: start;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                overflow: hidden;
+
+                figure {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                h2 {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    transition: width 0.5s ease; /* Transición suave para el efecto */
+                    position: relative;
+                    
+                }
+
+                h2::before {
+                    content: ""; /* Crea el pseudo-elemento vacío */
+                    position: absolute;
+                    left: -20px; /* Colocamos la línea al principio, en el lado izquierdo */
+                    bottom: 50%;
+                    width: 0; /* Inicialmente la línea no tiene ancho */
+                    height: 2px; /* Altura de la línea */
+                    background-color: var(--principal-color); /* Color de la línea */
+                    transition: width 0.5s ease; /* Transición suave para el efecto */
+                }               
+
+                p {
+                    font-size: .9rem;
+                    line-height: 1.8; /* Espaciado entre líneas, puedes ajustar el valor */
+                    color: #9b9b9b;
+                    font-weight: 400;
+                }
+            }    
+            
+            .slide:hover{
+                h2{
+                    transform: translateX(30px); /* El título se desliza hacia la derecha */
+                }
+                
+                h2::before {
+                    width: 15px; /* La línea se expande hacia la derecha cuando pasas el ratón */
+                }  
+            }
+        }
+        .carousel-indicators {
+            display: none;
+        }
+    }    
+}
+
+#container-parallax {
+    background-image: url('../resources/parallax.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+    width: 100%;
+    background-attachment: fixed ;
+    min-height: 300px;
+    position: relative; /* Necesario para que los elementos absolutos se posicionen correctamente */
+
+
+    .info-parallax {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        max-width: 400px;
+        align-items: start;
+        gap: 20px;
+
+        button {
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            color: white;
+            background-color: var(--color-buttons);
+            cursor: pointer;
+        }
+    }
+
+    .transparencia {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 2;
+        z-index: 1; /* Colócala detrás de `.info-parallax` */
+        background: rgba(0, 0, 0, 0.4);
+
+    }
+}
+
+
+#our-clients {
+    padding: 100px 20px;
+    background-color: #F6F6F6;
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        position: relative;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+        
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            font-family: "Lato", sans-serif;
+
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+            gap: 30px;
+    
+            .slide {
+                flex: 0 0 calc(33.33% - 30px); /* 20% del ancho total menos 10px por el gap */
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                overflow: hidden;
+                padding: 40px 20px;
+    
+                figure {
+                    width: 91px;
+                    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+
+
+                    img {
+                        width: 100%;
+                    }
+                }
+    
+                h2 {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    text-align: center;
+                    transition: width 0.5s ease; /* Transición suave para el efecto */
+                    position: relative;
+                    
+                }             
+    
+                p {
+                    font-size: .8rem;
+                    text-align: center;
+                    line-height: 1.8; /* Espaciado entre líneas, puedes ajustar el valor */
+                    color: #9b9b9b;
+                    font-weight: 400;
+                }
+            }      
+        }
+
+        .carousel-container > div {
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+          
+        .carousel-container > .active-slide {
+            border: .5px rgb(218, 218, 218) solid;
+            transform: scale(1.2); /* Aumenta el tamaño */
+            z-index: 1; /* Asegúrate de que esté en el frente */
+            background-color: white;
+        }
+
+        .carousel-container .inactive-slide {
+            transform: scale(0.9); /* Reducir el tamaño de los slides inactivos */
+            opacity: 0.5; /* Menor opacidad */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+          
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+          
+        .carousel-dot.active {
+            background-color: var(--principal-color); /* Color del punto activo */
+        }    
+    }
+}
+  
+#our-doctors {
+    padding: 80px 20px;
+    display: flex;
+    gap: 30px;
+    
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+        width: 70%;
+        margin: auto;
+        overflow: hidden;
+
+        .title-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: 500;
+                font-family: "Lato", sans-serif;
+
+            }
+            
+            .buttons-a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    padding: 15px 30px;
+                    background-color: #EBEBEB;
+                    text-decoration: none;
+                    color: black;
+                    font-size: .7rem;
+                    border: 1px #EBEBEB solid;
+                }
+
+                a:hover {
+                    background-color: var(--color-buttons);
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+            button.prev, button.next {
+                background-color: white;
+                border: 2px #EBEBEB solid;
+                color: black;
+                padding: 15px 20px;
+                cursor: pointer;
+            }
+        }
+        
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+            gap: 30px;
+
+            .slide {
+                flex: 0 0 calc(25% - 30px); /* 20% del ancho total menos 10px por el gap */
+                /*min-width: 100%;*/
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                color: white;
+
+
+                figure {
+                    width: 100%;
+                    height: 60%; /* Ajusta según el tamaño que desees */
+                    overflow: hidden; /* Esconde lo que se salga del contenedor */
+                    position: relative; /* Necesario para manejar el overflow correctamente */
+                    margin: 0; /* Opcional para ajustar el margen */
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        filter: grayscale(100%);
+                        transform: scale(1);
+                        transition: all 0.5s;
+                    }
+                }
+
+                .name-position {
+                    width: 100%;
+                    background-color: var(--principal-color);
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    justify-content: center;
+
+                    h2 {
+                        text-align: center;
+                        font-weight: 500;
+                        font-size: 1.1rem;
+                        transition: width 0.5s ease; /* Transición suave para el efecto */
+                        position: relative;
+                    }              
+    
+                    p {
+                        text-align: center;
+                        font-size: .9rem;
+                        line-height: 1.8; /* Espaciado entre líneas, puedes ajustar el valor */
+                        font-weight: 400;
+                    }
+
+                    .phone {
+                        font-size: .8rem;
+                    }
+                }    
+            }   
+
+            .slide:hover {
+                img {
+                    filter: grayscale(0%);
+                    transform: scale(1.1);
+
+                }
+            } 
+        }  
+
+        .carousel-indicators {
+            display: none;
+        }
+    }  
+    
+    .appo {
+        width: 30%;
+        background-size: cover; /* ajusta la imagen al tamaño del div */
+        background-repeat: no-repeat; /* evita que la imagen se repita */
+        background-position: center; /* centra la imagen en el div */
+        background-image: url("../resources/timetable.jpg"); /* imagen de fondo */
+        position: relative;
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        }
+          
+        .info {
+            position: absolute;
+            bottom: 20px;
+            width: 70%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
+        }  
+    }
+
+    .appo:hover {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+#frequent-questions {
+    background-color: #F6F6F6;
+    padding: 40px 30px;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        font-family: "Lato", sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .question {
+        margin-left: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 0px;
+    }
+    
+    .content{
+        padding: 5px 25px;
+        padding-bottom: 15px;
+        font-size: 1rem;
+        display: none;
+    
+        p{
+            color: #6A6A6A;
+        }
+    }
+
+    .question:hover {
+        gap: 10px;
+        .icon {
+            width: 20px;
+            height: 20px;            
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+            color: white;
+            background-color: var(--color-buttons);
+            border-radius: 3px;
+        }
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.back {
+    width: 40px;
+    height: 40px;
+    background-color:#ff4048;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    transition: .5s;
+    
+    a {
+        width: 100%;
+        height: 100%;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    i {
+        color: white;
+        font-size: 1rem;
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
+    .dialog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;    
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #F5F5F5;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        z-index: 11; /* Por encima del overlay */
+        overflow: auto;
+        width: 50vw;
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            font-family: "Lato", sans-serif;
+        }
+    
+        input, textarea {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px rgba(128, 128, 128, 0.637) solid;
+        }
+    
+        p {
+            padding: 20px 0px;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    
+        button {
+            padding: 10px 25px; 
+            border-radius: 5px;
+            font-size: .7rem;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            background-color: var(--color-buttons);
+            font-weight: 600;
+            border: none;
+            align-self: end; /* Asegura que el botón esté alineado a la izquierda */
+        }
+    }
+}
+
+.show {
+    display: flex;
+}
+
+.close-btn {
+    position: fixed; /* Posiciona el botón en relación al viewport */
+    top: calc(50% - 210px); /* Ajustar este valor para situarlo arriba del diálogo */
+    left: calc(50% + 23vw); /* Ajustar este valor para situarlo a la derecha del diálogo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 12; /* Asegúrate de que esté por encima del diálogo */
+    color: #F46562; /* Color del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+
+    i {
+        color: white; /* Color del ícono dentro del botón */
+    }
+}
+
+footer {
+    .normal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 20px;
+        background-color: #EFEFEF;
+
+        h1 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    
+        .contact, .news, .questions {
+            display: flex;
+            gap: 20px;
+        }
+    
+        .contact {
+            flex-direction: column;
+    
+            .icon {
+                color: var(--principal-color);
+                font-size: 1rem;
+            }
+    
+            p{
+                display: flex;
+                gap: 20px;
+                font-size: .9rem;
+                cursor: pointer;
+            }
+        }
+    
+        .news {
+            flex-direction: column;
+    
+            .new {
+                border-left: 2px var(--principal-color) solid;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+    
+            h2 {
+                font-size: .8rem;
+                font-weight: 600;
+            }
+    
+    
+            p{
+                font-size: .8rem;
+                cursor: pointer;
+                color: gray;
+            }
+        }
+    
+        .questions {
+            flex-direction: column;
+    
+            .area {
+                display: flex;
+                gap: 20px;
+    
+                #mensaje {
+                    padding: 10px;
+                }
+    
+                .email-button {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+    
+                    #email {
+                        padding: 10px;
+                    }
+                    
+                    button {
+                        padding: 15px 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        color: black;
+                        border: 1px black solid;
+                        font-size: .8rem;
+                        background-color: #EBEBEB;
+                    }
+
+                    button:hover {
+                        background-color: var(--color-buttons);
+                        color: white;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .after-footer {
+        background-color: #E1E1E1;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 20px;
+        color: #818181;
+
+        p {
+            font-size: .9rem;
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        a {
+            color: #818181;
+        }
+        a:hover {
+            color: var(--principal-color);
+        }
+    }
+}

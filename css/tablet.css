@@ -1,0 +1,321 @@
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        height: 50px;
+        .menu-logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            gap: 20px;
+
+            figure {
+                width: 150px;
+            }
+
+            #menu-toggle {
+                display: flex;
+            }
+        }
+    
+        nav {
+            #menu {
+                position: absolute;
+                flex-direction: column; /* Lista en columna */
+                top: 100%;
+                left: 0;
+                width: 70%; /* Ancho del menú lateral */
+                height: 100vh; /* Altura completa de la pantalla */
+                background: #f4f4f4; /* Fondo del menú */
+                transform: translateX(-100%); /* Oculto por defecto */
+                transition: transform 0.3s ease-in-out;
+                gap: 0;
+                li {
+                    position: relative;
+                    a{
+                        padding: 20px 30px;
+                        display: block; /* Convierte el <a> en un bloque */
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                li:hover {
+                    background-color: #16B6D2;
+
+                    a{
+                        color: white;
+                    }
+                }
+            }
+
+            #menu.open {
+                transform: translateX(0); /* Menú visible */
+            } 
+            
+        }
+
+        .zoom {
+            font-size: 1.5rem;
+        }
+
+       
+    }
+
+    #hero-slides {
+        .hero {
+            left: 40%;
+            max-width: 450px;
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .rslides_nav.prev, .rslides_nav.next {
+            display: none;
+        }
+    }
+
+    #information {
+        flex-wrap: wrap;
+        position: static;
+        padding-top: 40px;
+        gap: 30px;
+        transform: translate(0%, 0%);
+
+        .appointment, .emergency, .hours {
+            width: 90%;
+        }
+        .emergency {
+            order: 1; /* Esta se moverá al segundo lugar */
+        }
+          
+        .hours {
+            order: 2; /* Esta se moverá al tercer lugar */
+        }
+
+        .appointment {
+            order: 3;
+            .options-appo {
+                #services, input, a {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #about-us {
+        .about {
+            margin-top: 50px;
+            padding: 80px 0px;
+            gap: 40px;
+    
+            .facts {
+                display: flex;
+                width: 80%;
+        
+                .booking, .team, .schedule, .guarantee {
+                    width: 100%;
+
+                    .icon {
+                        color: #16B6D2;
+                        font-size: 35px;
+                    }
+        
+                    h3 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        
+            .our-clinic {
+                width: 80%;
+                padding: 40px;
+                clip-path: none;
+
+
+                p {
+                    font-size: 1rem;
+                }
+    
+                .doctor {
+                    display: flex;
+                    flex-direction: column;
+                    figure {
+                        width: 50%;
+                    }
+
+                    .doctor-info {
+                        padding: 0px;
+                        line-height: 1.8; /* Espaciado entre líneas, puedes ajustar el valor */
+                    }
+                }
+            }
+        }  
+    }
+
+    #our-services {
+        .carousel {
+            width: 90%;
+
+            .title-info {
+                flex-direction: column;
+                gap: 20px;
+    
+                .buttons-a {
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+            }
+            
+            .carousel-container {
+                gap: 10px;
+    
+                .slide {
+                    flex: 0 0 calc(33.33% - 10px); /* 20% del ancho total menos 10px por el gap */
+                    /* Establecer número de slides visibles por defecto */            
+                }    
+            }
+        }    
+    }
+
+    #container-parallax {
+        .info-parallax {
+            left: 40%;
+        }
+    }
+    
+
+    #our-clients {
+        padding: 70px 20px;
+
+        .carousel {
+    
+            .carousel-container {
+                gap: 0px;
+        
+                .slide {
+                    flex: 0 0 calc(100% - 0px); /* 20% del ancho total menos 10px por el gap */      
+                }      
+            }
+              
+            .carousel-container > .active-slide {
+                transform: scale(1.0); /* Aumenta el tamaño */
+            }  
+        }
+    }
+
+    #our-doctors {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        .carousel {
+            width: 90%;
+
+            .title-info {
+                flex-direction: column;
+                gap: 20px;
+    
+                .buttons-a {
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+            }
+            
+            .carousel-container {
+                gap: 10px;
+    
+                .slide {
+                    flex: 0 0 calc(50% - 10px); /* 20% del ancho total menos 10px por el gap */
+                    /* Establecer número de slides visibles por defecto */          
+                    
+                    .name-position {
+    
+                        h2 {
+                            font-size: 1.2rem;
+                        }              
+        
+                        p {
+                            font-size: 1rem;
+                        }
+    
+                        .phone {
+                            font-size: .9rem;
+                        }
+                    } 
+                }    
+            }
+        }
+
+        .appo {
+            width: 90%;
+            margin: auto;
+            height: 500px;
+    
+            .info {
+    
+                a {
+                    font-size: 1.5rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                }
+            }  
+        }
+    
+        .appo:hover {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    #frequent-questions {
+        padding: 30px 20px;
+    
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        .question {
+            margin-left: 0px;
+        }
+    }
+
+    footer {
+        .normal-footer {
+            flex-direction: column;
+            align-items: start;
+            gap: 40px;
+        
+            .questions {
+                width: 100%;
+        
+                .area {
+                    flex-direction: column;
+                    width: 100%;
+                }
+            } 
+        } 
+        .after-footer {
+            flex-direction: column;
+            gap: 20px;    
+        }
+    }
+}
